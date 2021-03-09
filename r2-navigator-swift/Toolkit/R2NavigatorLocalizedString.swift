@@ -10,7 +10,7 @@
 //
 
 import Foundation
-import R2Shared
+import R2BShared
 
 func R2NavigatorLocalizedString(_ key: String, _ values: CVarArg...) -> String {
     return R2LocalizedString("R2Navigator.\(key)", in: "org.readium.r2-navigator-swift", values)

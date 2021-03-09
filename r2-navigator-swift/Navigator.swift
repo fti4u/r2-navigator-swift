@@ -11,7 +11,7 @@
 
 import Foundation
 import SafariServices
-import R2Shared
+import R2BShared
 
 
 public protocol Navigator {

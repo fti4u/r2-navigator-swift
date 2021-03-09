@@ -12,7 +12,7 @@
 import Foundation
 import PDFKit
 import UIKit
-import R2Shared
+import R2BShared
 
 
 public protocol PDFNavigatorDelegate: VisualNavigatorDelegate { }

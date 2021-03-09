@@ -12,7 +12,7 @@
 import Foundation
 import UIKit
 
-import R2Shared
+import R2BShared
 
 public class UserSettings {
     

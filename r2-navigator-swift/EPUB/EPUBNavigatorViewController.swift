@@ -10,7 +10,7 @@
 //
 
 import UIKit
-import R2Shared
+import R2BShared
 import WebKit
 import SafariServices
 

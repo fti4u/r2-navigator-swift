@@ -10,7 +10,7 @@
 //
 
 import WebKit
-import R2Shared
+import R2BShared
 
 
 protocol EPUBSpreadViewDelegate: class {

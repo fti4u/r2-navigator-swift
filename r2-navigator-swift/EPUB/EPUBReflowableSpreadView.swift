@@ -12,7 +12,7 @@
 import Foundation
 import UIKit
 import WebKit
-import R2Shared
+import R2BShared
 
 
 /// A view rendering a spread of resources with a reflowable layout.
