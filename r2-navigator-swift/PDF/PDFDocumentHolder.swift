@@ -6,7 +6,7 @@
 
 import Foundation
 import PDFKit
-import R2Shared
+import R2BShared
 
 @available(iOS 11.0, *)
 final class PDFDocumentHolder {
@@ -22,16 +22,16 @@ final class PDFDocumentHolder {
 }
 
 @available(iOS 11.0, *)
-extension PDFDocumentHolder: R2Shared.PDFDocumentFactory {
+extension PDFDocumentHolder: R2BShared.PDFDocumentFactory {
     
-    func open(url: URL, password: String?) throws -> R2Shared.PDFDocument {
+    func open(url: URL, password: String?) throws -> R2BShared.PDFDocument {
         guard let document = document, url.absoluteString == href else {
             throw PDFDocumentError.openFailed
         }
         return document
     }
     
-    func open(resource: Resource, password: String?) throws -> R2Shared.PDFDocument {
+    func open(resource: Resource, password: String?) throws -> R2BShared.PDFDocument {
         guard let document = document, resource.link.href == href else {
             throw PDFDocumentError.openFailed
         }
