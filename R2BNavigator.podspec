@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "R2BNavigator"
-  s.version      = "2.0.0"
+  s.version      = "2.0.3"
   s.license      = "BSD 3-Clause License"
   s.summary      = "R2BNavigator"
   s.homepage     = "https://github.com/fti4u/r2-navigator-swift"
