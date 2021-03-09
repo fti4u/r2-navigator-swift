@@ -81,10 +81,9 @@ final class EPUBFixedSpreadView: EPUBSpreadView {
         """)
     }
     
-    override func pointFromTap(_ data: [String : Any]) -> CGPoint? {
-        guard let x = data["screenX"] as? Int, let y = data["screenY"] as? Int else {
-            return nil
-        }
+    override func pointFromTap(_ data: TapData) -> CGPoint? {
+        let x = data.screenX
+        let y = data.screenY
 
         return CGPoint(
             x: CGFloat(x) * scrollView.zoomScale - scrollView.contentOffset.x + webView.frame.minX,
@@ -111,19 +110,6 @@ final class EPUBFixedSpreadView: EPUBSpreadView {
         var scripts = super.makeScripts()
         scripts.append(WKUserScript(source: EPUBFixedSpreadView.fixedScript, injectionTime: .atDocumentStart, forMainFrameOnly: true))
         return scripts
-    }
-    
-    override func evaluateScript(_ script: String, inResource href: String, completion: ((Any?, Error?) -> Void)? = nil) {
-        guard isWrapperLoaded else {
-            completion?(nil, nil)
-            return
-        }
-        guard href == "#" || spread.contains(href: href) else {
-            log(.warning, "Href \(href) not found in spread")
-            return
-        }
-        let script = "spread.eval('\(href)', \"\(script.replacingOccurrences(of: "\"", with: "\\\""))\");"
-        webView.evaluateJavaScript(script, completionHandler: completion)
     }
 
 }
